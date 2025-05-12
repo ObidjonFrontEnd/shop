@@ -12,12 +12,12 @@ const CardFilter = ({ product }: { product: Product }) => {
 
 				{product?.is_liked ? (
 					<Heart
-						className={`$ absolute top-[20px] fill-[#E81504]    right-[24px] overflow-hidden`}
+						className={`$ absolute top-[10px] right-[10px] md:top-[20px] fill-[#E81504]    md:right-[24px] overflow-hidden`}
 						color='#E81504'
 					/>
 				) : (
 					<Heart
-						className={`$ absolute top-[20px] right-[24px] overflow-hidden`}
+						className={`$ absolute top-[10px] right-[10px] md:top-[20px] md:right-[24px] overflow-hidden`}
 						color='#545D6A'
 					/>
 				)}
@@ -25,9 +25,9 @@ const CardFilter = ({ product }: { product: Product }) => {
 				<div
 					className={`${
 						product?.is_aksiya ? '' : 'hidden'
-					} absolute top-[20px] left-[24px]`}
+					} absolute top-[10px] left-[10px] md:top-[20px] md:left-[24px]`}
 				>
-					<p className='text-green-400 font-bold bg-white py-[7px] shadow-lg px-[15px] rounded-[8px]'>
+					<p className='text-green-400 font-bold bg-white py-[7px] text-[10px] md:text-[16px] shadow-lg px-[5px] md:px-[15px] rounded-[8px]'>
 						Скидки
 					</p>
 				</div>
