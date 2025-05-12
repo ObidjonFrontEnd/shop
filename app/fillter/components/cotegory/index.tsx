@@ -1,4 +1,4 @@
-import { CotegorTyp } from '@/app/types/cotegoryType'
+
 import axios from 'axios'
 import BrendsCotegory from './brendsCotegory'
 
