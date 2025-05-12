@@ -3,7 +3,8 @@ import Cotegory from './components/cotegory'
 import { PageProps } from './components/serch'
 
 export default async function FillterPage({ searchParams }: PageProps) {
-	const brend = searchParams?.brend
+	const params = await searchParams
+	const brend = params?.brend
 
 	return (
 		<div className='p-4 max-w-[1180px] px-[10px] mx-auto mt-[10px]'>
