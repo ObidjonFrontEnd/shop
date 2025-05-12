@@ -1,12 +1,13 @@
 
-import Header from './components/Header';
-import Hero from './components/hero'
+
+import Brands from './components/HomeComponents/brands'
+import Hero from './components/HomeComponents/hero'
 
 export default function Home() {
   return (
     <div className="home">
-      <Header />
       <Hero/>
+      <Brands/>
     </div>
   );
 }
