@@ -1,3 +1,4 @@
+import { CotegorTyp } from '@/app/types/cotegoryType'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -34,8 +35,11 @@ const IconWithBadge = ({
 		)}
 	</div>
 )
+type CategoryNavProps = {
+	data: CotegorTyp[];
+};
 
-export const LogoSearch = () => (
+export const LogoSearch = ({data}:CategoryNavProps) => (
 	<div className='flex flex-col md:flex-row justify-between items-center gap-4 px-[10px] py-4 max-w-[1180px] mx-auto'>
 		<div className='logo text-2xl font-bold w-full text-primary flex items-center justify-between gap-1'>
 			<div className='flex items-center text-[27px] text-[#134E9B]'>
@@ -60,8 +64,11 @@ export const LogoSearch = () => (
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent className='bg-white'>
-					<DropdownMenuItem>Aksiyalar</DropdownMenuItem>
-					<DropdownMenuItem>Smartfonlar</DropdownMenuItem>
+					{data?.map(({name},index)=>{
+						return(<DropdownMenuItem key={index}>{name}</DropdownMenuItem>)
+					})}
+					
+	
 				</DropdownMenuContent>
 			</DropdownMenu>
 			<div className='bg-[#EBEFF3] w-full flex min-w-[230px] rounded-[3px]'>
