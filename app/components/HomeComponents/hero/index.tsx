@@ -116,7 +116,7 @@ export default function Hero() {
 					)
 				})}
 				<div className="max-w-[1180px] hidden md:flex relative mx-auto  items-center">
-						<div className='custom-pagination mt-[10px] flex items-center justify-center  absolute bottom-4 left-[10px] z-10'></div>
+						<div className='custom-pagination  flex items-center justify-center  absolute bottom-4 left-[10px] z-10'></div>
 				</div>
 			</Swiper>
 		</div>
