@@ -1,9 +1,5 @@
 import Link from 'next/link'
 
-type CategoryNavProps = {
-	data: CotegorTyp[]
-}
-
 export interface CotegorTyp {
 	id: string
 	name: string
@@ -13,7 +9,7 @@ const BrendsCotegory = ({
 	cotegory,
 }: {
 	brend?: string
-	cotegory: CotegorTyp[] // Изменено с CategoryNavProps[] на CotegorTyp[]
+	cotegory: CotegorTyp[]
 }) => {
 	return (
 		<div className='w-full'>
