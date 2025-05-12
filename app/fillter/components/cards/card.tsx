@@ -41,8 +41,8 @@ const CardFilter = ({ product }: { product: Product }) => {
 					{product?.description}
 				</Link>
 
-				<div className='flex flex-col md:flex-row'>
-					<div className='flex md:flex-col justify-between mb-[14px] md:mb-0 mt-[28px]'>
+				<div className='flex w-full flex-col md:flex-row'>
+					<div className='flex md:flex-col w-full justify-between mb-[14px] md:mb-0 mt-[28px]'>
 						<p className='font-bold text-[#0A1729] text-[15px]  md:text-[20px] leading-[26px]'>
 							{product?.price} usz
 						</p>
