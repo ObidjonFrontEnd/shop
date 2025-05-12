@@ -7,8 +7,8 @@ import { Product } from '.'
 const CardFilter = ({ product }: Product) => {
 	return (
 		<div className=' min-h-[450px] mx-auto'>
-			<div className='img w-full rounded-[8px] flex relative items-center justify-center py-[43px] px-[35px] bg-[#EBEFF3]'>
-				<Image src={'/product.png'} width={202} height={202} alt='name' />
+			<div className='img w-full rounded-[8px] group flex relative items-center justify-center py-[43px] px-[35px] bg-[#EBEFF3]'>
+				<Image src={'/product.png'} className='group-hover:scale-130 duration-[0.5s]' width={202} height={202} alt='name' />
 
 				{product?.is_liked ? (
 					<Heart
