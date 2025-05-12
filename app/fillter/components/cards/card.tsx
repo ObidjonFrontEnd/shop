@@ -41,13 +41,13 @@ const CardFilter = ({ product }: { product: Product }) => {
 					{product?.description}
 				</Link>
 
-				<div className='flex w-full flex-col md:flex-row'>
-					<div className='flex md:flex-col w-full justify-between mb-[14px] md:mb-0 mt-[28px]'>
+				<div className='flex w-full flex-col md:gap-[10px] md:flex-row'>
+					<div className='flex md:flex-col w-full justify-between  mb-[14px] md:mb-0 mt-[28px]'>
 						<p className='font-bold text-[#0A1729] text-[15px]  md:text-[20px] leading-[26px]'>
 							{product?.price} usz
 						</p>
 
-						<p className='bg-[#F02C961A] px-[5px] md:text-[14px] text-[10px] items-center flex h-[27px]  text-[#F02C96]'>
+						<p className='bg-[#F02C961A] px-[5px] md:text-[14px] text-[10px] items-center flex h-[27px]  text-[#F02C96] rounded-[3px]'>
 							6 oy/1 200000
 						</p>
 					</div>
