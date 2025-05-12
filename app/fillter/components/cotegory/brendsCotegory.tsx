@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export interface CotegorTyp {
 	id: string
 	name: string
