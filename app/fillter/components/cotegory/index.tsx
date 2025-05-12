@@ -3,7 +3,7 @@ import axios from 'axios'
 import BrendsCotegory from './brendsCotegory'
 
 interface Props {
-	brend?: string
+	brend?: string | string[] | undefined
 }
 
 type CategoryNavProps = {
@@ -24,9 +24,12 @@ const Cotegory = async ({ brend }: Props) => {
 		}))
 	)
 
+	// Преобразуем brend в строку, если это массив
+	const brendValue = Array.isArray(brend) ? brend[0] : brend
+
 	return (
 		<div className='w-[280px] h-full  p-[19px] min-h-[600px] rounded-[8px] bg-[#EBEFF3]'>
-			<BrendsCotegory brend={brend} cotegory={cotegory} />
+			<BrendsCotegory brend={brendValue} cotegory={cotegory} />
 		</div>
 	)
 }

@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export interface CotegorTyp {
 	id: string
 	name: string
@@ -8,7 +6,7 @@ const BrendsCotegory = ({
 	brend,
 	cotegory,
 }: {
-	brend?: string
+	brend?: string | undefined
 	cotegory: CotegorTyp[]
 }) => {
 	return (
