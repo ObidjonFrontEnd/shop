@@ -1,10 +1,12 @@
 import CardsFiler from './components/cards';
 import Cotegory from './components/cotegory';
+import { SearchParams } from './components/serch'
+
 
 export default async function FillterPage({
   searchParams,
 }: {
-  searchParams?: { brend?: string };
+  searchParams: SearchParams;
 }) {
   const brend = searchParams?.brend;
 
