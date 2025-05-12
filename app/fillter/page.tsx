@@ -1,13 +1,14 @@
 import CardsFiler from './components/cards';
 import Cotegory from './components/cotegory';
 
-interface FillterPageProps {
+
+export default function FillterPage({
+  searchParams,
+}: {
   searchParams?: {
     brend?: string;
   };
-}
-
-export default function FillterPage({ searchParams }: FillterPageProps) {
+}) {
   const brend = searchParams?.brend;
 
   return (
