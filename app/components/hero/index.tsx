@@ -1,11 +1,12 @@
 'use client'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination } from 'swiper/modules'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import { useEffect } from 'react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { useEffect } from 'react'
-import Image from 'next/image'
+import { Autoplay, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 type Product = {
 	title: string
@@ -54,7 +55,7 @@ export default function Hero() {
 	return (
 		<div className='w-full relative mx-auto bg-[#F3F0F0] '>
 			<Swiper
-				className='transition-all relative max-w-[1180px] duration-500 px-[10px]'
+				className='transition-all relative w-full  duration-500 px-[10px]'
 				modules={[Pagination, Autoplay]}
 				autoplay={{
 					delay: 3000,
@@ -89,28 +90,34 @@ export default function Hero() {
 				{heroSliderDat?.map(({ title, body, img }, index) => {
 					return (
 						<SwiperSlide key={index}>
-							<div className='w-full h-[450px] gap-[50px] flex items-center justify-center px-4'>
-								<div className=''>
-									<h2 className='text-xl md:text-2xl font-semibold mb-2'>
+							<div className='w-full  max-w-[1180px] mx-auto h-[210px] md:h-[450px] md:gap-[50px] flex items-center justify-center px-4 relative '>
+								<div className='w-[70%] md:full'>
+									<h2 className='text-[22px] text-[#203F68] md:text-[#0A1729] md:text-[44px] leading-[120%] font-black mb-2 '>
 										{title}
 									</h2>
-									<p className='text-sm md:text-base text-gray-700'>{body}</p>
+									<p className='text-[11px] text-[#203F6899] md:text-[16px] md:text-[#203F6899] '>
+										{body}
+									</p>
+									<Button className='bg-[#0F4A97] h-[36px] w-[111px] md:h-[54px] md:w-[130px] mt-[22px] text-white font-bold text-[16px]'>
+										Batafsil
+									</Button>
 								</div>
-								<div className=''>
+								<div className='w-[30%] h-full md:w-[300px] md:h-[300px] relative'>
 									<Image
 										src={img}
-										alt='iPhone 13'
-										width={400}
-										height={300}
-										unoptimized 
+										alt={title}
+										fill	
+										unoptimized
+										className="object-contain z-0 "
 									/>
 								</div>
 							</div>
 						</SwiperSlide>
 					)
 				})}
-
-				<div className='custom-pagination flex items-center justify-center mt-4 absolute bottom-4 left-[10px] z-10'></div>
+				<div className="max-w-[1180px] hidden md:flex relative mx-auto  items-center">
+						<div className='custom-pagination mt-[10px] flex items-center justify-center  absolute bottom-4 left-[10px] z-10'></div>
+				</div>
 			</Swiper>
 		</div>
 	)
