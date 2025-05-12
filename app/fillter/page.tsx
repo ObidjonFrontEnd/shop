@@ -6,7 +6,7 @@ export default async function FillterPage({
 }: {
   searchParams?: { brend?: string };
 }) {
-  const brend = await searchParams?.brend;
+  const brend = searchParams?.brend;
 
   return (
     <div className="p-4 max-w-[1180px] px-[10px] mx-auto mt-[10px]">
