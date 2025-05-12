@@ -13,7 +13,7 @@ const BrendsCotegory = ({
 	cotegory,
 }: {
 	brend?: string
-	cotegory: CategoryNavProps[]
+	cotegory: CotegorTyp[] // Изменено с CategoryNavProps[] на CotegorTyp[]
 }) => {
 	return (
 		<div className='w-full'>
