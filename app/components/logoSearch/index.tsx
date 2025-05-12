@@ -49,10 +49,10 @@ export const LogoSearch = () => (
 				 <Menu size={25} />
 			</div>
 		</div>
-		<div className='flex gap-[10px] md:min-w-[688px] w-full max-w-[688px] mx-auto'>
+		<div className='flex gap-[5px] md:gap-[10px] sm:min-w-[400px] lg:min-w-[688px] w-full max-w-[688px] mx-auto'>
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
-					<Button className='md:min-w-[160px] max-w-[160px] h-[48px] bg-[#134E9B] text-white font-bold text-[16px]'>
+					<Button className='md:min-w-[160px] w-[120px] max-w-[160px] h-[48px] bg-[#134E9B] text-white font-bold text-[16px]'>
 						Kategorıya{' '}
 						<span>
 							<ChevronDown className='text-[25px]' />
@@ -64,10 +64,10 @@ export const LogoSearch = () => (
 					<DropdownMenuItem>Smartfonlar</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
-			<div className='bg-[#EBEFF3] w-full flex'>
+			<div className='bg-[#EBEFF3] w-full flex min-w-[230px] rounded-[3px]'>
 				<Input
 					placeholder='What are you looking for?'
-					className='w-full  border-none outline-none h-[48px]'
+					className='w-full text-[10px] sm:text-[13px] text-[#00000033]  border-none outline-none h-[48px]'
 				/>
 				<Button className='h-[48px] w-[60px] bg-[#134E9B] rounded-[6px] text-white'>
 					<Search />
