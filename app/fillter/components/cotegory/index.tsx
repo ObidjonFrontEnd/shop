@@ -6,25 +6,29 @@ interface Props {
 	brend?: string | string[] | undefined
 }
 
-type CategoryNavProps = {
-	data: CotegorTyp[]
-}
-
 const Cotegory = async ({ brend }: Props) => {
 	const respons = await axios.get(
 		'https://api.ashyo.fullstackdev.uz/brands/all'
 	)
-	const apiData: CategoryNavProps[] = await respons.data
+	const apiData = await respons.data
 
-	// Преобразуем данные в формат, ожидаемый BrendsCotegory
-	const cotegory = apiData.flatMap(item =>
-		item.data.map(brand => ({
-			id: String(brand.id), // Преобразуем number в string
+
+	let cotegory = []
+	if (Array.isArray(apiData)) {
+
+		cotegory = apiData.map(brand => ({
+			id: String(brand.id),
 			name: brand.name,
 		}))
-	)
+	} else if (apiData && typeof apiData === 'object' && apiData.data && Array.isArray(apiData.data)) {
+	
+		cotegory = apiData.data.map(brand => ({
+			id: String(brand.id),
+			name: brand.name,
+		}))
+	}
 
-	// Преобразуем brend в строку, если это массив
+
 	const brendValue = Array.isArray(brend) ? brend[0] : brend
 
 	return (
