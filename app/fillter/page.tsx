@@ -4,7 +4,7 @@ import Cotegory from './components/cotegory'
 export default function FillterPage({
   searchParams,
 }: {
-  searchParams: { brend?: string };
+  searchParams: { brend?: string };  
 }) {
   const brend = searchParams.brend;
 
