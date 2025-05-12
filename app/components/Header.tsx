@@ -4,6 +4,11 @@ import { LogoSearch } from './logoSearch'
 import { TopBar } from './topBar'
 import { CotegorTyp } from '../types/cotegoryType'
 
+
+
+
+
+
 const Header = async () => {
 
 	const respons = await axios.get(

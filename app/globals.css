@@ -1,5 +1,39 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+.custom-bullet {
+  transition: all 0.3s ease;
+}
+
+.custom-bullet.active {
+  width: 36px;
+  height: 36px;
+  background-color: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.custom-bullet.active::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: #93c5fd;
+  border-radius: 9999px;
+  animation: popIn 0.3s ease forwards;
+}
 
 
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
