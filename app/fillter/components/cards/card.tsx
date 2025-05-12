@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Product } from '.'
 
-const CardFilter = ({ product }: Product) => {
+const CardFilter = ({ product }: { product: Product }) => {
 	return (
 		<div className=' min-h-[450px] mx-auto'>
 			<div className='img w-full rounded-[8px] group flex relative items-center justify-center py-[43px] px-[35px] bg-[#EBEFF3]'>
