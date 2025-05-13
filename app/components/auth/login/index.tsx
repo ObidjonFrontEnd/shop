@@ -24,7 +24,7 @@ export default function LoginForm() {
 		user: User
 		message: string
 	}
-	const [userData, setUserData] = useState<AuthResponse | null>(null)
+const [, setUserData] = useState<AuthResponse | null>(null)
 
 	const loginFech = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
