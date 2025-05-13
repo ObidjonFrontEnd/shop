@@ -9,7 +9,7 @@ import { useState } from 'react'
 export default function LoginForm() {
 	const [password, setPassword] = useState<string>('')
 	const [email, setEmail] = useState<string>('')
-	const { setUserData: userDataSet, clearUserData } = useUserStore()
+	const { setUserData: userDataSet } = useUserStore()
 	interface User {
 		id: number
 		fullname: string
