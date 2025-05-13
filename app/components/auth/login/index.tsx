@@ -4,7 +4,7 @@ import { useUserStore } from '@/app/zustand/UserData'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import axios from 'axios'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 export default function LoginForm() {
 	const [password, setPassword] = useState<string>('')
@@ -27,7 +27,7 @@ export default function LoginForm() {
 	const [userData, setUserData] = useState<AuthResponse | null>(null)
 	console.log(userData)
 
-	const loginFech = async (event: SubmitEvent) => {
+	const loginFech = async (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		try {
 			const respons = await axios.post(
