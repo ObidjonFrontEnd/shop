@@ -1,4 +1,6 @@
+"use client";
 import { CotegorTyp } from '@/app/types/cotegoryType'
+import { useAuthModal } from '@/app/zustand/Auth'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -40,8 +42,10 @@ type CategoryNavProps = {
 	data: CotegorTyp[];
 };
 
-export const LogoSearch = ({data}:CategoryNavProps) => (
-	<div className='flex flex-col md:flex-row justify-between items-center gap-4 px-[10px] py-4 max-w-[1180px] mx-auto'>
+export const LogoSearch = ({data}:CategoryNavProps) => {
+	const { isOpen, setIsOpen } = useAuthModal();
+	return (
+			<div className='flex flex-col md:flex-row justify-between items-center gap-4 px-[10px] py-4 max-w-[1180px] mx-auto'>
 		<div className='logo text-2xl font-bold w-full text-primary flex items-center justify-between gap-1'>
 			<div >
 				<Link className='flex items-center text-[27px] text-[#134E9B]' href={'/'}><Image src={'logo.svg'} width={70} height={70} alt='logo' />
@@ -50,7 +54,7 @@ export const LogoSearch = ({data}:CategoryNavProps) => (
 			<div className="">
 			<p className='text-[#203F68] md:hidden font-semibold text-[14px]'>+998 (71) 123-45-67</p>
 			</div>
-			<div className="md:hidden">
+			<div className="md:hidden" >
 				 <Menu size={25} />
 			</div>
 		</div>
@@ -96,10 +100,12 @@ export const LogoSearch = ({data}:CategoryNavProps) => (
 				<IconWithBadge icon={<ShoppingCart />} count={7} />
 			</div>
 
-			<div className='w-[50px] h-[48px] bg-[#EBEFF3] flex text-[#545D6A] justify-center items-center rounded-[6px]'>
+			<div className='w-[50px] h-[48px] bg-[#EBEFF3] flex text-[#545D6A] justify-center items-center rounded-[6px]' onClick={()=>{setIsOpen(!isOpen)}}>
 				<User className='w-5 h-5' />
 			</div>
 		</div>
 
 	</div>
-)
+	)
+
+}
