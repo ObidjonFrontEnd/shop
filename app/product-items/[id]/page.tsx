@@ -3,14 +3,16 @@ import axios from 'axios'
 import Link from 'next/link'
 import InformationBody from './components/information'
 
+
 interface PageProps {
-	params: {
+	params: Promise<{
 		id: string
-	}
+	}>
 }
 
 const ProductItems = async ({ params }: PageProps) => {
-	const id = params.id
+	const resolvedParams = await params
+	const id = resolvedParams.id
 	const respons = await axios.get(
 		`https://api.ashyo.fullstackdev.uz/product-items/${id}`
 	)
