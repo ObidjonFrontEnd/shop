@@ -10,15 +10,13 @@ import Image from 'next/image'
 import { Heart, Scale } from 'lucide-react'
 import { ProductItem } from '@/app/fillter/components/cards'
 
-interface Props {
-  productData: ProductItem
-}
 
-const ProductImages = ({ productData }: Props) => {
+
+const ProductImages = () => {
   const [activeIndex, setActiveIndex] = useState(0)
   const mainSwiperRef = useRef<any>(null)
 
-  const images = Array(5).fill('/product.png') // real image data: productData.images
+  const images = Array(5).fill('/product.png') 
 
   const handleThumbnailClick = (index: number) => {
     setActiveIndex(index)
@@ -70,7 +68,7 @@ const ProductImages = ({ productData }: Props) => {
           ))}
         </Swiper>
 
-        {/* Action icons */}
+
         <div className="absolute top-3 right-3 flex gap-2 z-10">
           <Scale className="text-gray-500 hover:text-black cursor-pointer" />
           <Heart className="text-gray-500 hover:text-red-500 cursor-pointer" />
