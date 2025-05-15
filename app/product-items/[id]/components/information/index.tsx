@@ -17,7 +17,7 @@ const InformationBody = async ({ productData }: Props) => {
 	return (
 		<div>
 			<div className="flex gap-[32px] max-w-[1180px] mx-auto px-[10px] md:flex-row flex-col">
-				<ProductImages productData={productData} />
+				<ProductImages  />
 				<ProductShopInfo productData={productData} />
 			</div>
 			<div className="md:mt-[80px] w-full mb-[100px] max-w-[1180px] mx-auto px-[10px]">
