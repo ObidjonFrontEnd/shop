@@ -8,8 +8,9 @@ interface PageProps {
 		id: string
 	}
 }
+
 const ProductItems = async ({ params }: PageProps) => {
-	const id = await params.id
+	const id = params.id
 	const respons = await axios.get(
 		`https://api.ashyo.fullstackdev.uz/product-items/${id}`
 	)
