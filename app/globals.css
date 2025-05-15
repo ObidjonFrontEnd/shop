@@ -37,3 +37,25 @@
   }
 }
 
+@media (min-width: 768px) {
+  .thumbsSwiper {
+    width: 100px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+  }
+  .mainSwiper {
+    width: calc(100% - 120px);
+    float: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .thumbsSwiper {
+    width: 100%;
+    height: 80px;
+  }
+  .mainSwiper {
+    width: 100%;
+  }
+}

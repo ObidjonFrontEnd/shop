@@ -1,14 +1,19 @@
 import { Heart, Scale, ShoppingBag } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { Product } from '.'
 
 const CardFilter = ({ product }: { product: Product }) => {
 	return (
-		<div className=' min-h-[450px] mx-auto'>
+		<div className=' min-h-[450px]  mx-auto'>
 			<div className='img w-full rounded-[8px] group flex relative items-center justify-center py-[43px] px-[35px] bg-[#EBEFF3]'>
-				<Image src={'/product.png'} className='group-hover:scale-130 duration-[0.5s]' width={202} height={202} alt='name' />
+				<Image
+					src={'/product.png'}
+					className='group-hover:scale-130 duration-[0.5s]'
+					width={202}
+					height={202}
+					alt='name'
+				/>
 
 				{product?.is_liked ? (
 					<Heart
@@ -35,7 +40,7 @@ const CardFilter = ({ product }: { product: Product }) => {
 
 			<div className='mt-[16px]'>
 				<Link
-					href={'/'}
+					href={`/product-items/${product?.id}`}
 					className='text-[#545D6A] text-[14px] leading-[19px] mb-[28px]'
 				>
 					{product?.description}
