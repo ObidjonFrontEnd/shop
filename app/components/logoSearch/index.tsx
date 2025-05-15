@@ -48,7 +48,7 @@ export const LogoSearch = ({data}:CategoryNavProps) => {
 			<div className='flex flex-col md:flex-row justify-between items-center gap-4 px-[10px] py-4 max-w-[1180px] mx-auto'>
 		<div className='logo text-2xl font-bold w-full text-primary flex items-center justify-between gap-1'>
 			<div >
-				<Link className='flex items-center text-[27px] text-[#134E9B]' href={'/'}><Image src={'logo.svg'} width={70} height={70} alt='logo' />
+				<Link className='flex items-center text-[27px] text-[#134E9B]' href={'/'}><Image src={'/logo.svg'} width={70} height={70} alt='logo' />
 				Ashyo</Link>
 			</div>
 			<div className="">
