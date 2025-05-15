@@ -8,7 +8,6 @@ import 'swiper/css/navigation'
 
 import Image from 'next/image'
 import { Heart, Scale } from 'lucide-react'
-import { ProductItem } from '@/app/fillter/components/cards'
 
 
 
