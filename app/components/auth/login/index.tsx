@@ -1,5 +1,6 @@
 'use client'
 
+import { useAuthModal } from '@/app/zustand/Auth'
 import { useUserStore } from '@/app/zustand/UserData'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -10,6 +11,7 @@ export default function LoginForm() {
 	const [password, setPassword] = useState<string>('')
 	const [email, setEmail] = useState<string>('')
 	const { setUserData: userDataSet } = useUserStore()
+	const {  setIsOpen } = useAuthModal()
 	interface User {
 		id: number
 		fullname: string
@@ -38,6 +40,10 @@ const [, setUserData] = useState<AuthResponse | null>(null)
 			)
 			setUserData(respons.data)
 			userDataSet(respons.data)
+			if(respons.status === 200){
+				setIsOpen(false)
+			}
+			
 		} catch (error) {
 			console.log(error)
 		}

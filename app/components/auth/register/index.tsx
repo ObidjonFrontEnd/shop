@@ -7,6 +7,7 @@ import { FormEvent, useState } from 'react'
 import axios from 'axios'
 
 import { useUserStore } from '@/app/zustand/UserData'
+import { useAuthModal } from '@/app/zustand/Auth'
 
 
 export default function RegisterForm() {
@@ -29,6 +30,7 @@ export default function RegisterForm() {
       message: string
     }
     const [userData, setUserData] = useState<AuthResponse | null>(null)
+    const {  setIsOpen } = useAuthModal()
   
     const registerFech = async (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault()
@@ -41,7 +43,10 @@ export default function RegisterForm() {
             fullname,
           }
         )
-        console.log(userData);
+        
+        if(respons.status === 200){
+				setIsOpen(false)
+			}
         
         setUserData(respons.data)
         userDataSet(respons.data)
