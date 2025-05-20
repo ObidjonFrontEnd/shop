@@ -16,21 +16,6 @@ interface TastiqlashModalProps {
   isModal: boolean
 }
 
-interface User {
-  id: number
-  fullname: string
-  email: string
-  role: 'USER' | 'ADMIN' 
-  is_verified: boolean
-}
-
-interface AuthResponse {
-  accessToken: string 
-  refreshToken: string 
-  user: User
-  message: string
-}
-
 const TastiqlashModal = ({setModal , isModal}:TastiqlashModalProps) => {
 	const [otp, setOtp] = useState<string>('')
 	const user = useUserStore((state) => state.userData?.user)
