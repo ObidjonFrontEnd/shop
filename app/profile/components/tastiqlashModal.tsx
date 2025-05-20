@@ -38,13 +38,13 @@ const TastiqlashModal = ({setModal , isModal}:TastiqlashModalProps) => {
 	
 
 	const tastiqlash = async()=>{
-		const respons = await axios.post("https://api.ashyo.fullstackdev.uz/auth/verify-otp" , {
+		const response = await axios.post("https://api.ashyo.fullstackdev.uz/auth/verify-otp" , {
 			email:user?.email,
 			otp
 		})
-		const data:AuthResponse = await respons.data 
-		if(respons.status ===200){
-			useUserStore.getState().setUserData(data)
+	
+		if(response.status ===200){
+			useUserStore.getState().setUserData(response.data)
 			setModal(false)
 		}	
 	}
